@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Internet Bank – Documents</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- PDF.js core library -->
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Kentech Internet Bank</div>
+      <!-- <ul class="menu">
+        <li><a href="#" class="active">Documents</a></li>
+        <li><a href="#">Accounts</a></li>
+        <li><a href="#">Transfers</a></li>
+        <li><a href="#">Support</a></li>
+      </ul> -->
+    </nav>
+  </header>
+
+  <main>
+    <div class="document-container">
+      <!-- Sidebar with document selections -->
+      <aside class="sidebar">
+        <h3>Available Documents</h3>
+        <ul class="document-list">
+          <li>
+            <button
+              data-pdf="project_plan/plan.pdf"
+              class="pdf-selection active">
+              Project Plan
+            </button>
+          </li>
+          <li>
+            <button
+              data-pdf="network_diagrams/diagrams.pdf"
+              class="pdf-selection">
+              Network Diagrams
+            </button>
+          </li>
+          <li>
+            <button
+              data-pdf="database_designs/database.pdf"
+              class="pdf-selection">
+              Database Designs
+            </button>
+          </li>
+          <li>
+            <button
+              data-pdf="security_plan/security.pdf"
+              class="pdf-selection">
+              Security Plan
+            </button>
+          </li>
+          <li>
+            <button
+              data-pdf="testing_plan/testing.pdf"
+              class="pdf-selection">
+              Testing Plan
+            </button>
+          </li>
+          <li>
+            <button
+              data-pdf="project_implementation/implementation.pdf"
+              class="pdf-selection">
+              Project Implementation
+            </button>
+          </li>
+          <li>
+            <button
+              data-pdf="post_mortem/post_mortem.pdf"
+              class="pdf-selection">
+              Post Mortem
+            </button>
+          </li>
+          <li>
+            <button
+              data-pdf="final_solution/final.pdf"
+              class="pdf-selection">
+              Final Solution
+            </button>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- PDF Viewer area -->
+      <section class="pdf-container">
+        <canvas id="pdf-render"></canvas>
+        <div class="pdf-controls">
+            <button id="prev">◀ Prev</button>
+            <span>Page <span id="page-num">1</span> of <span id="page-count">--</span></span>
+            <button id="next">Next ▶</button>
+            <button id="zoom-out">➖ Zoom Out</button>
+            <button id="zoom-in">➕ Zoom In</button>
+          </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Inline PDF.js setup, or you can move this into a separate script.js -->
+  <script>
+    // Tell PDF.js where to find the worker
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.worker.min.js';
+  </script>
+  <!-- Your viewer logic -->
+  <script src="js/pdf-viewer.js"></script>
+</body>
+</html>
