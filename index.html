@@ -1,9 +1,27 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Internet Bank – Documents</title>
+  <title>Kentech Internet Bank – Documents</title>
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pc6AM8j4MKe7Yd/U7hsG94Y23c4pKZqgsC6e5EZZ2n5W1GZtQKvHhTjfZ3tdp6osg+SVw3kid79CfHv5TOY+jw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
   <!-- PDF.js core library -->
   <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.min.js"></script>
@@ -12,12 +30,6 @@
   <header>
     <nav>
       <div class="logo">Kentech Internet Bank</div>
-      <!-- <ul class="menu">
-        <li><a href="#" class="active">Documents</a></li>
-        <li><a href="#">Accounts</a></li>
-        <li><a href="#">Transfers</a></li>
-        <li><a href="#">Support</a></li>
-      </ul> -->
     </nav>
   </header>
 
@@ -31,6 +43,7 @@
             <button
               data-pdf="project_plan/plan.pdf"
               class="pdf-selection active">
+              <i class="fas fa-file-alt"></i>
               Project Plan
             </button>
           </li>
@@ -38,6 +51,7 @@
             <button
               data-pdf="network_diagrams/diagrams.pdf"
               class="pdf-selection">
+              <i class="fas fa-project-diagram"></i>
               Network Diagrams
             </button>
           </li>
@@ -45,6 +59,7 @@
             <button
               data-pdf="database_designs/database.pdf"
               class="pdf-selection">
+              <i class="fas fa-database"></i>
               Database Designs
             </button>
           </li>
@@ -52,6 +67,7 @@
             <button
               data-pdf="security_plan/security.pdf"
               class="pdf-selection">
+              <i class="fas fa-shield-alt"></i>
               Security Plan
             </button>
           </li>
@@ -59,6 +75,7 @@
             <button
               data-pdf="testing_plan/testing.pdf"
               class="pdf-selection">
+              <i class="fas fa-vial"></i>
               Testing Plan
             </button>
           </li>
@@ -66,6 +83,7 @@
             <button
               data-pdf="project_implementation/implementation.pdf"
               class="pdf-selection">
+              <i class="fas fa-cogs"></i>
               Project Implementation
             </button>
           </li>
@@ -73,6 +91,7 @@
             <button
               data-pdf="post_mortem/post_mortem.pdf"
               class="pdf-selection">
+              <i class="fas fa-clipboard-check"></i>
               Post Mortem
             </button>
           </li>
@@ -80,6 +99,7 @@
             <button
               data-pdf="final_solution/final.pdf"
               class="pdf-selection">
+              <i class="fas fa-flag-checkered"></i>
               Final Solution
             </button>
           </li>
@@ -90,20 +110,22 @@
       <section class="pdf-container">
         <canvas id="pdf-render"></canvas>
         <div class="pdf-controls">
-            <button id="prev">◀ Prev</button>
-            <span>Page <span id="page-num">1</span> of <span id="page-count">--</span></span>
-            <button id="next">Next ▶</button>
-            <button id="zoom-out">➖ Zoom Out</button>
-            <button id="zoom-in">➕ Zoom In</button>
-          </div>
-
+          <button id="prev">◀ Prev</button>
+          <span>Page <span id="page-num">1</span> of <span id="page-count">--</span></span>
+          <button id="next">Next ▶</button>
+          <button id="zoom-out">➖ Zoom Out</button>
+          <button id="zoom-in">➕ Zoom In</button>
+        </div>
       </section>
     </div>
   </main>
 
-  <!-- Inline PDF.js setup, or you can move this into a separate script.js -->
+  <footer>
+    &copy; 2025 Kentech Internet Bank &middot; All rights reserved.
+  </footer>
+
+  <!-- PDF.js worker setup -->
   <script>
-    // Tell PDF.js where to find the worker
     pdfjsLib.GlobalWorkerOptions.workerSrc =
       'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.worker.min.js';
   </script>
